@@ -9,9 +9,9 @@ package com.google.gwt.maps.client.placeslib;
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *      http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -20,13 +20,13 @@ package com.google.gwt.maps.client.placeslib;
  * #L%
  */
 
+import java.util.List;
+
 import com.google.gwt.ajaxloader.client.ArrayHelper;
 import com.google.gwt.core.client.JavaScriptObject;
 import com.google.gwt.core.client.JsArrayString;
 import com.google.gwt.maps.client.base.LatLng;
 import com.google.gwt.maps.client.base.LatLngBounds;
-
-import java.util.List;
 
 /**
  * An Autocompletion query to be sent to the AutocompleteService. <br>
@@ -135,7 +135,7 @@ public class AutocompletionRequest extends JavaScriptObject {
   }
 
   public final void setTypes(List<String> types) {
-    setTypes((String[]) types.toArray());
+    setTypes(types.toArray(new String[0]));
   }
 
   public final void setTypes(String... types) {

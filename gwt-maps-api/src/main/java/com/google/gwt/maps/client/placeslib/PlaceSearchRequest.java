@@ -9,9 +9,9 @@ package com.google.gwt.maps.client.placeslib;
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *      http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -51,7 +51,7 @@ public class PlaceSearchRequest extends JavaScriptObject {
 
   /**
    * The bounds within which to search for Places. Both location and radius will be ignored if bounds is set.
-   * 
+   *
    * @param bounds
    */
   public final native void setBounds(LatLngBounds bounds) /*-{
@@ -68,7 +68,7 @@ public class PlaceSearchRequest extends JavaScriptObject {
   /**
    * A term to be matched against all available fields, including but not limited to name, type, and address, as well as
    * customer reviews and other third-party content.
-   * 
+   *
    * @param keyword
    */
   public final native void setKeyword(String keyword) /*-{
@@ -85,7 +85,7 @@ public class PlaceSearchRequest extends JavaScriptObject {
 
   /**
    * The location around which to search for Places.
-   * 
+   *
    * @param location
    */
   public final native void setLocation(LatLng location) /*-{
@@ -101,7 +101,7 @@ public class PlaceSearchRequest extends JavaScriptObject {
 
   /**
    * Restricts the Place search results to Places that include this text in the name.
-   * 
+   *
    * @param name
    */
   public final native void setName(String name) /*-{
@@ -118,7 +118,7 @@ public class PlaceSearchRequest extends JavaScriptObject {
   /**
    * The distance from the given location within which to search for Places, in meters. The maximum allowed value is
    * 50000
-   * 
+   *
    * @param radius
    */
   public final native void setRadius(double radius) /*-{
@@ -137,7 +137,7 @@ public class PlaceSearchRequest extends JavaScriptObject {
    * Restricts the Place search results to Places with a type matching at least one of the specified types in this
    * array. Valid types are given <a href= "https://developers.google.com/maps/documentation/places/supported_types"
    * >here</a>. TODO add more AutocompleteType enums down the road. Otherwise use the setTypes(JsArrayString)
-   * 
+   *
    * @param types
    */
   public final void setTypes(AutocompleteType... types) {
@@ -153,7 +153,7 @@ public class PlaceSearchRequest extends JavaScriptObject {
   }
 
   public final void setTypes(List<String> types) {
-    setTypes((String[]) types.toArray());
+    setTypes(types.toArray(new String[0]));
   }
 
   public final void setTypes(String... types) {
