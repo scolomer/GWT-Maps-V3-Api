@@ -9,9 +9,9 @@ package com.google.gwt.maps.client;
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *      http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -29,7 +29,7 @@ import com.google.gwt.ajaxloader.client.AjaxLoader.AjaxLoaderOptions;
 
 /**
  * Load Maps javascript v3 api
- * 
+ *
  * TODO maybe move to the new loading system they have in google apis
  */
 public class LoadApi {
@@ -37,7 +37,7 @@ public class LoadApi {
   /**
    * Note: If you use 3, it will take the newest stable available. Don't want that. We didn't test with that yet!
    */
-  public final static String API_VERSION = "3.10";
+  public static String API_VERSION = "3.23";
 
   /**
    * Libraries not loaded by default <br>
@@ -184,7 +184,7 @@ public class LoadApi {
 
   /**
    * Load Maps javascript v3 api with default libraries. these are not loaded {@link LoadLibrary}
-   * 
+   *
    * @param onLoad - callback on success
    * @param sensor - derive location [true|false]
    */
@@ -194,7 +194,7 @@ public class LoadApi {
 
   /**
    * loads maps api
-   * 
+   *
    * @param onLoad callback on success
    * @param loadLibraries load additional libraries like geometry
    * @param sensor derive location [true|false]
@@ -202,10 +202,10 @@ public class LoadApi {
   public static void go(Runnable onLoad, ArrayList<LoadLibrary> loadLibraries, boolean sensor) {
     load(onLoad, sensor, loadLibraries, null, null);
   }
-  
+
   /**
    * loads maps api
-   * 
+   *
    * @param onLoad callback on success
    * @param loadLibraries load additional libraries like geometry
    * @param sensor derive location [true|false]
@@ -217,7 +217,7 @@ public class LoadApi {
 
   /**
    * loads maps api
-   * 
+   *
    * @param onLoad callback on success
    * @param loadLibraries load additional libraries like geometry
    * @param sensor derive location [true|false]
@@ -226,10 +226,10 @@ public class LoadApi {
     ArrayList<LoadLibrary> loadLibrariesList = new ArrayList<LoadLibrary>(Arrays.asList(loadLibraries));
     load(onLoad, sensor, loadLibrariesList, null, null);
   }
-  
+
   /**
    * loads maps api
-   * 
+   *
    * @param onLoad callback on success
    * @param loadLibraries load additional libraries like geometry
    * @param sensor derive location [true|false]
@@ -242,7 +242,7 @@ public class LoadApi {
 
   /**
    * loads maps api
-   * 
+   *
    * @param onLoad callback on success
    * @param sensor derive location [true|false]
    * @param otherParams add additional params. like "key=YOUR_API_KEY"
@@ -253,7 +253,7 @@ public class LoadApi {
 
   /**
    * loads maps api
-   * 
+   *
    * @param onLoad callback on success
    * @param loadLibraries load additional libraries like geometry
    * @param sensor sensor derive location [true|false]
@@ -265,7 +265,7 @@ public class LoadApi {
 
   /**
    * loads maps api
-   * 
+   *
    * @param onLoad callback on success
    * @param loadLibraries load additional libraries like geometry
    * @param sensor sensor derive location [true|false]
@@ -299,7 +299,7 @@ public class LoadApi {
 
   /**
    * get the url libraries parameter
-   * 
+   *
    * @param loadLibraries
    */
   private static String getLibraries(ArrayList<LoadLibrary> loadLibraries) {
