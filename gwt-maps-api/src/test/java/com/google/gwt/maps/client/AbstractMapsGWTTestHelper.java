@@ -71,7 +71,7 @@ public abstract class AbstractMapsGWTTestHelper extends GWTTestCase {
     loadLibraries.addAll(Arrays.asList(libs));
 
     // run
-    LoadApi.go(test, loadLibraries, isSensor());
+    LoadApi.go(test, loadLibraries, "");
 
     // ensure expiration is does not reach finishTest()
     delayTest();

@@ -9,9 +9,9 @@ package com.google.gwt.maps.testing.client;
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *      http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -84,7 +84,7 @@ public class Showcase implements EntryPoint {
       }
     };
 
-    LoadApi.go(onLoad, loadLibraries, sensor);
+    LoadApi.go(onLoad, loadLibraries, "");
   }
 
   /**
@@ -144,14 +144,14 @@ public class Showcase implements EntryPoint {
     drawMultipleKmlMap();
 
     drawOverlayViewMap();
-    
+
     // TODO put on its own page someday
     //drawLanguageMap();
   }
 
   /**
    * Add the widget to the demos
-   * 
+   *
    * @param widget map
    */
   private void addMapWidget(Widget widget) {
@@ -282,10 +282,10 @@ public class Showcase implements EntryPoint {
     OpenStreetMapLayerWidget wMap = new OpenStreetMapLayerWidget();
     addMapWidget(wMap);
   }
-  
+
   private void drawLanguageMap() {
     LanguageMapWidget wMap = new LanguageMapWidget();
     addMapWidget(wMap);
   }
-  
+
 }

@@ -37,7 +37,7 @@ public class LoadApiGwtTest extends AbstractMapsGWTTestHelper {
    * Must come first so that all API's are available for test suite or failures will occur
    */
   public void testLoadWLibs3() {
-    boolean sensor = true;
+    String key = "";
     ArrayList<LoadLibrary> loadLibraries = new ArrayList<LoadApi.LoadLibrary>();
     loadLibraries.addAll(java.util.Arrays.asList(LoadLibrary.values()));
 
@@ -46,18 +46,18 @@ public class LoadApiGwtTest extends AbstractMapsGWTTestHelper {
       public void run() {
         finishTest();
       }
-    }, loadLibraries, sensor);
+    }, loadLibraries, key);
     delayTest();
   }
 
   public void testLoad() {
-    boolean sensor = false;
+    String key = "";
     LoadApi.go(new Runnable() {
       @Override
       public void run() {
         finishTest();
       }
-    }, sensor);
+    }, key);
     delayTest();
   }
 
@@ -67,12 +67,12 @@ public class LoadApiGwtTest extends AbstractMapsGWTTestHelper {
       public void run() {
         finishTest();
       }
-    }, true);
+    }, "");
     delayTest();
   }
 
   public void testLoadWLibs() {
-    boolean sensor = false;
+    String key = "";
     ArrayList<LoadLibrary> loadLibraries = new ArrayList<LoadApi.LoadLibrary>();
     loadLibraries.add(LoadLibrary.GEOMETRY);
     LoadApi.go(new Runnable() {
@@ -80,7 +80,7 @@ public class LoadApiGwtTest extends AbstractMapsGWTTestHelper {
       public void run() {
         finishTest();
       }
-    }, loadLibraries, sensor);
+    }, loadLibraries, key);
     delayTest();
   }
 
@@ -93,9 +93,9 @@ public class LoadApiGwtTest extends AbstractMapsGWTTestHelper {
           public void run() {
             finishTest();
           }
-        }, false);
+        }, "");
       }
-    }, false);
+    }, "");
     delayTest();
   }
 
@@ -108,9 +108,9 @@ public class LoadApiGwtTest extends AbstractMapsGWTTestHelper {
           public void run() {
             finishTest();
           }
-        }, false);
+        }, "");
       }
-    }, true);
+    }, "");
     delayTest();
   }
 
@@ -123,9 +123,9 @@ public class LoadApiGwtTest extends AbstractMapsGWTTestHelper {
           public void run() {
             finishTest();
           }
-        }, false, null);
+        }, "", null);
       }
-    }, true);
+    }, "");
 
   }
 
@@ -138,14 +138,14 @@ public class LoadApiGwtTest extends AbstractMapsGWTTestHelper {
           public void run() {
             finishTest();
           }
-        }, false, "");
+        }, "", "");
       }
-    }, true);
+    }, "");
     delayTest();
   }
 
   public void testUse1() {
-    boolean sensor = false;
+    String key = "";
     ArrayList<LoadLibrary> loadLibraries = new ArrayList<LoadApi.LoadLibrary>();
     loadLibraries.addAll(java.util.Arrays.asList(LoadLibrary.values()));
 
@@ -154,7 +154,7 @@ public class LoadApiGwtTest extends AbstractMapsGWTTestHelper {
       public void run() {
         finishTest();
       }
-    }, loadLibraries, sensor);
+    }, loadLibraries, key);
     delayTest();
   }
 

@@ -9,9 +9,9 @@ package com.google.gwt.maps.client;
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- *
+ * 
  *      http://www.apache.org/licenses/LICENSE-2.0
- *
+ * 
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -186,10 +186,10 @@ public class LoadApi {
    * Load Maps javascript v3 api with default libraries. these are not loaded {@link LoadLibrary}
    *
    * @param onLoad - callback on success
-   * @param sensor - derive location [true|false]
+   * @param apiKey - API key
    */
-  public static void go(Runnable onLoad, boolean sensor) {
-    load(onLoad, sensor, null, null, null);
+  public static void go(Runnable onLoad, String apiKey) {
+    load(onLoad, apiKey, null, null, null);
   }
 
   /**
@@ -197,10 +197,10 @@ public class LoadApi {
    *
    * @param onLoad callback on success
    * @param loadLibraries load additional libraries like geometry
-   * @param sensor derive location [true|false]
+   * @param apiKey - API key
    */
-  public static void go(Runnable onLoad, ArrayList<LoadLibrary> loadLibraries, boolean sensor) {
-    load(onLoad, sensor, loadLibraries, null, null);
+  public static void go(Runnable onLoad, ArrayList<LoadLibrary> loadLibraries, String apiKey) {
+    load(onLoad, apiKey, loadLibraries, null, null);
   }
 
   /**
@@ -208,11 +208,11 @@ public class LoadApi {
    *
    * @param onLoad callback on success
    * @param loadLibraries load additional libraries like geometry
-   * @param sensor derive location [true|false]
+   * @param apiKey - API key
    * @param language choose a language
    */
-  public static void go(Runnable onLoad, ArrayList<LoadLibrary> loadLibraries, boolean sensor, Language language) {
-    load(onLoad, sensor, loadLibraries, language, null);
+  public static void go(Runnable onLoad, ArrayList<LoadLibrary> loadLibraries, String apiKey, Language language) {
+    load(onLoad, apiKey, loadLibraries, language, null);
   }
 
   /**
@@ -220,11 +220,11 @@ public class LoadApi {
    *
    * @param onLoad callback on success
    * @param loadLibraries load additional libraries like geometry
-   * @param sensor derive location [true|false]
+   * @param apiKey - API key
    */
-  public static void go(Runnable onLoad, LoadLibrary[] loadLibraries, boolean sensor) {
+  public static void go(Runnable onLoad, LoadLibrary[] loadLibraries, String apiKey) {
     ArrayList<LoadLibrary> loadLibrariesList = new ArrayList<LoadLibrary>(Arrays.asList(loadLibraries));
-    load(onLoad, sensor, loadLibrariesList, null, null);
+    load(onLoad, apiKey, loadLibrariesList, null, null);
   }
 
   /**
@@ -232,23 +232,23 @@ public class LoadApi {
    *
    * @param onLoad callback on success
    * @param loadLibraries load additional libraries like geometry
-   * @param sensor derive location [true|false]
+   * @param apiKey - API key
    * @param language choose a language
    */
-  public static void go(Runnable onLoad, LoadLibrary[] loadLibraries, boolean sensor, Language language) {
+  public static void go(Runnable onLoad, LoadLibrary[] loadLibraries, String apiKey, Language language) {
     ArrayList<LoadLibrary> loadLibrariesList = new ArrayList<LoadLibrary>(Arrays.asList(loadLibraries));
-    load(onLoad, sensor, loadLibrariesList, language, null);
+    load(onLoad, apiKey, loadLibrariesList, language, null);
   }
 
   /**
    * loads maps api
    *
    * @param onLoad callback on success
-   * @param sensor derive location [true|false]
+   * @param apiKey - API key
    * @param otherParams add additional params. like "key=YOUR_API_KEY"
    */
-  public static void go(Runnable onLoad, boolean sensor, String otherParams) {
-    load(onLoad, sensor, null, null, otherParams);
+  public static void go(Runnable onLoad, String apiKey, String otherParams) {
+    load(onLoad, apiKey, null, null, otherParams);
   }
 
   /**
@@ -256,11 +256,11 @@ public class LoadApi {
    *
    * @param onLoad callback on success
    * @param loadLibraries load additional libraries like geometry
-   * @param sensor sensor derive location [true|false]
+   * @param apiKey - API key
    * @param otherParams add additional params. like "key=YOUR_API_KEY"
    */
-  public static void go(Runnable onLoad, ArrayList<LoadLibrary> loadLibraries, boolean sensor, String otherParams) {
-    load(onLoad, sensor, loadLibraries, null, otherParams);
+  public static void go(Runnable onLoad, ArrayList<LoadLibrary> loadLibraries, String apiKey, String otherParams) {
+    load(onLoad, apiKey, loadLibraries, null, otherParams);
   }
 
   /**
@@ -268,18 +268,18 @@ public class LoadApi {
    *
    * @param onLoad callback on success
    * @param loadLibraries load additional libraries like geometry
-   * @param sensor sensor derive location [true|false]
+   * @param apiKey - API key
    * @param language choose a language
    * @param otherParams add additional params. like "key=YOUR_API_KEY"
    */
-  public static void go(Runnable onLoad, ArrayList<LoadLibrary> loadLibraries, boolean sensor, Language language,
+  public static void go(Runnable onLoad, ArrayList<LoadLibrary> loadLibraries, String apiKey, Language language,
       String otherParams) {
-    load(onLoad, sensor, loadLibraries, language, otherParams);
+    load(onLoad, apiKey, loadLibraries, language, otherParams);
   }
 
-  private static void load(Runnable onLoad, boolean sensor, ArrayList<LoadLibrary> loadLibraries, Language language,
+  private static void load(Runnable onLoad, String apiKey, ArrayList<LoadLibrary> loadLibraries, Language language,
       String otherParams) {
-    String op = "sensor=" + sensor;
+    String op = "key=" + apiKey;
     if (otherParams != null) {
       op += "&" + otherParams;
     }
