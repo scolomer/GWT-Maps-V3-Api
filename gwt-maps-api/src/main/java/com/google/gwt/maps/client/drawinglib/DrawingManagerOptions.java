@@ -59,7 +59,7 @@ public class DrawingManagerOptions extends JavaScriptObject {
   /**
    * Options to apply to any new circles created with this DrawingManager. The center and radius properties are ignored,
    * and the map property of a new circle is always set to the DrawingManager's map.
-   * 
+   *
    * @param circleOptions
    */
   public final native void setCircleOptions(CircleOptions circleOptions) /*-{
@@ -76,7 +76,7 @@ public class DrawingManagerOptions extends JavaScriptObject {
 
   /**
    * The enabled/disabled state of the drawing control. Defaults to true.
-   * 
+   *
    * @param drawingControl
    */
   public final native void setDrawingControl(boolean drawingControl) /*-{
@@ -92,7 +92,7 @@ public class DrawingManagerOptions extends JavaScriptObject {
 
   /**
    * The display options for the drawing control.
-   * 
+   *
    * @param drawingControlOptions
    */
   public final native void setDrawingControlOptions(DrawingControlOptions drawingControlOptions) /*-{
@@ -110,18 +110,18 @@ public class DrawingManagerOptions extends JavaScriptObject {
    * The DrawingManager's drawing mode, which defines the type of overlay to be added on the map. Accepted values are
    * MARKER, POLYGON, POLYLINE, RECTANGLE, CIRCLE, or null. A drawing mode of null means that the user can interact with
    * the map as normal, and clicks do not draw anything.
-   * 
+   *
    * @param drawingMode
    */
   public final void setDrawingMode(OverlayType drawingMode) {
-    setDrawingModeImpl(drawingMode.value());
+    setDrawingModeImpl(drawingMode == null ? null : drawingMode.value());
   }
 
   /**
    * The DrawingManager's drawing mode, which defines the type of overlay to be added on the map. Accepted values are
    * MARKER, POLYGON, POLYLINE, RECTANGLE, CIRCLE, or null. A drawing mode of null means that the user can interact with
    * the map as normal, and clicks do not draw anything.
-   * 
+   *
    * @param drawingMode
    */
   private native void setDrawingModeImpl(String drawingMode) /*-{
@@ -141,7 +141,7 @@ public class DrawingManagerOptions extends JavaScriptObject {
 
   /**
    * The Map to which the DrawingManager is attached, which is the Map on which the overlays created will be placed.
-   * 
+   *
    * @param mapWidget
    */
   public final void setMap(MapWidget mapWidget) {
@@ -156,7 +156,7 @@ public class DrawingManagerOptions extends JavaScriptObject {
   /**
    * Options to apply to any new markers created with this DrawingManager. The position property is ignored, and the map
    * property of a new marker is always set to the DrawingManager's map.
-   * 
+   *
    * @param markerOptions
    */
   public final native void setMarkerOptions(MarkerOptions markerOptions) /*-{
@@ -174,7 +174,7 @@ public class DrawingManagerOptions extends JavaScriptObject {
   /**
    * Options to apply to any new polygons created with this DrawingManager. The paths property is ignored, and the map
    * property of a new polygon is always set to the DrawingManager's map.
-   * 
+   *
    * @param polygonOptions
    */
   public final native void setPolygonOptions(PolygonOptions polygonOptions) /*-{
@@ -192,7 +192,7 @@ public class DrawingManagerOptions extends JavaScriptObject {
   /**
    * Options to apply to any new polylines created with this DrawingManager. The path property is ignored, and the map
    * property of a new polyline is always set to the DrawingManager's map.
-   * 
+   *
    * @param polylineOptions
    */
   public final native void setPolylineOptions(PolylineOptions polylineOptions) /*-{
@@ -210,7 +210,7 @@ public class DrawingManagerOptions extends JavaScriptObject {
   /**
    * Options to apply to any new rectangles created with this DrawingManager. The bounds property is ignored, and the
    * map property of a new rectangle is always set to the DrawingManager's map.
-   * 
+   *
    * @param rectangleOptions
    */
   public final native void setRectangleOptions(RectangleOptions rectangleOptions) /*-{
